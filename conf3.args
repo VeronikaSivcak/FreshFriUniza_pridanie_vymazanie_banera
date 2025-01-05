@@ -1,0 +1,4 @@
+--suite zmazanieBaneraIkonaKos
+--outputdir results/zmazanieBaneraIkonaKos
+--report report.html
+--log log.html

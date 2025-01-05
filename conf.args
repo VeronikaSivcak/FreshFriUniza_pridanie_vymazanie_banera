@@ -1,0 +1,4 @@
+--suite pridanieBanera
+--outputdir results/pridanieBanera
+--report report.html
+--log log.html

@@ -1,0 +1,4 @@
+--suite zmazanieBaneraTriBodky
+--outputdir results/zmazanieBaneraTriBodky
+--report report.html
+--log log.html

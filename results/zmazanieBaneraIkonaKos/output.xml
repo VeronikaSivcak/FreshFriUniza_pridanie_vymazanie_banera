@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2025-01-04T22:55:27.933843" rpa="false" schemaversion="5">
+<suite id="s1" name="PythonProject2" source="C:\Users\simus\PycharmProjects\PythonProject2">
+<suite id="s1-s1" name="Test" source="C:\Users\simus\PycharmProjects\PythonProject2\test">
+<suite id="s1-s1-s1" name="freshFriUniza" source="C:\Users\simus\PycharmProjects\PythonProject2\test\freshFriUniza">
+<suite id="s1-s1-s1-s1" name="zmazanieBaneraIkonaKos" source="C:\Users\simus\PycharmProjects\PythonProject2\test\freshFriUniza\zmazanieBaneraIkonaKos.robot">
+<test id="s1-s1-s1-s1-t1" name="Remove Banner If Server Exists" line="82">
+<kw name="Open Browser And Navigate To Login" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:28.351870" level="INFO">Opening browser 'Chrome' to base url 'https://fresh.fri.uniza.sk/login'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-04T22:55:28.350888" elapsed="2.997349"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-04T22:55:31.348840" elapsed="0.041058"/>
+</kw>
+<status status="PASS" start="2025-01-04T22:55:28.350196" elapsed="3.039879"/>
+</kw>
+<kw name="Login As Admin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-04T22:55:31.390653" elapsed="0.589394"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:31.981906" level="INFO">Typing text 'hrkut' into text field 'xpath=//input[@type='text']'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-04T22:55:31.980761" elapsed="0.265531"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:32.246960" level="INFO">Typing text 'fricka' into text field 'id=password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-04T22:55:32.246601" elapsed="0.493093"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:32.740461" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-04T22:55:32.739993" elapsed="0.194404"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DASHBOARD_CONTENT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-04T22:55:32.934843" elapsed="2.146308"/>
+</kw>
+<status status="PASS" start="2025-01-04T22:55:31.390338" elapsed="3.691033"/>
+</kw>
+<kw name="Navigate To Banners Section">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:35.082221" level="INFO">Clicking element 'xpath=//div[@class='menu-group-container' and .//div[@class='group-text' and text()='Obsah']]'.</msg>
+<arg>${DASHBOARD_CONTENT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-04T22:55:35.081970" elapsed="0.077515"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BANNERS_SECTION}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-04T22:55:35.159793" elapsed="0.238719"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:35.399129" level="INFO">Clicking element 'xpath=//a[@href='/cms/banners' and text()='Banery']'.</msg>
+<arg>${BANNERS_SECTION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-04T22:55:35.398806" elapsed="0.099982"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BANNERS_BODY}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-04T22:55:35.499087" elapsed="0.403295"/>
+</kw>
+<status status="PASS" start="2025-01-04T22:55:35.081638" elapsed="0.821120"/>
+</kw>
+<kw name="Try To Find Banner And Delete It">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<arg>${TD_ELEMENT}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-01-04T22:55:35.904737" elapsed="0.016246"/>
+</kw>
+<msg time="2025-01-04T22:55:35.921810" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Get WebElement</arg>
+<arg>${TD_ELEMENT}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-04T22:55:35.904266" elapsed="0.017616"/>
+</kw>
+<if>
+<branch type="IF" condition="${status} == True">
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:35.939359" level="INFO">${delete_button} = &lt;selenium.webdriver.remote.webelement.WebElement (session="33c7a2a5b9589d0d472ad402bcffa764", element="f.B44D93EBA88B0A51AF570300001280A0.d.92386ED3DA8B6AF248233B290811429E.e.174")&gt;</msg>
+<var>${delete_button}</var>
+<arg>${DELETE_BUTTON_XPATH}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-01-04T22:55:35.922828" elapsed="0.016605"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:35.939977" level="INFO">Clicking button '&lt;selenium.webdriver.remote.webelement.WebElement (session="33c7a2a5b9589d0d472ad402bcffa764", element="f.B44D93EBA88B0A51AF570300001280A0.d.92386ED3DA8B6AF248233B290811429E.e.174")&gt;'.</msg>
+<arg>${delete_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-04T22:55:35.939681" elapsed="0.141717"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${YES_BUTTON}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-04T22:55:36.081695" elapsed="0.240481"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:36.851436" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="t3_formular.png"&gt;&lt;img src="t3_formular.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOT_NAME_1}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-01-04T22:55:36.322465" elapsed="0.529140"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-04T22:55:38.852281" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-04T22:55:36.851852" elapsed="2.000626"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:38.853089" level="INFO">Clicking button 'xpath=//button[@type='button' and .//span[text()='Áno']]'.</msg>
+<arg>${YES_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-04T22:55:38.852752" elapsed="0.159480"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SUCCESS_MESSAGE}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-04T22:55:39.012599" elapsed="0.464369"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:39.812910" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="t3_uspech.png"&gt;&lt;img src="t3_uspech.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOT_NAME_2}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-01-04T22:55:39.477250" elapsed="0.336016"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-04T22:55:40.814270" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-04T22:55:39.813544" elapsed="1.000983"/>
+</kw>
+<status status="PASS" start="2025-01-04T22:55:35.922224" elapsed="4.892467"/>
+</branch>
+<status status="PASS" start="2025-01-04T22:55:35.922138" elapsed="4.892683"/>
+</if>
+<status status="PASS" start="2025-01-04T22:55:35.903440" elapsed="4.911520"/>
+</kw>
+<kw name="Verify If Banner Is Not In Banner List">
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:40.827209" level="INFO">Current page does not contain element 'xpath=//td[@class='ant-table-cell ant-table-cell-ellipsis' and text()='Server']'.</msg>
+<arg>${TD_ELEMENT}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="PASS" start="2025-01-04T22:55:40.815824" elapsed="0.011553"/>
+</kw>
+<status status="PASS" start="2025-01-04T22:55:40.815325" elapsed="0.012236"/>
+</kw>
+<kw name="Log Out">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:40.828657" level="INFO">Clicking element 'xpath=//a[@href='/' and .//img[@alt='Logo Fri']]'.</msg>
+<arg>${FRI_LOGO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-04T22:55:40.828315" elapsed="0.286122"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGOUT_BUTTON}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-04T22:55:41.114923" elapsed="0.359196"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-04T22:55:41.475683" level="INFO">Clicking element 'xpath=//*[@id="app"]/div/div[6]/div[2]/div/span/span/a/span/span'.</msg>
+<arg>${LOGOUT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-04T22:55:41.474818" elapsed="0.503661"/>
+</kw>
+<status status="PASS" start="2025-01-04T22:55:40.827866" elapsed="1.150920"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-04T22:55:41.979359" elapsed="2.287723"/>
+</kw>
+<doc>This test case should test deleting Server banner using bin icon on fresh.fri.uniza.sk</doc>
+<tag>zmazanieBaneraIkonaKos</tag>
+<status status="PASS" start="2025-01-04T22:55:28.349281" elapsed="15.918162"/>
+</test>
+<status status="PASS" start="2025-01-04T22:55:27.982993" elapsed="16.285981"/>
+</suite>
+<status status="PASS" start="2025-01-04T22:55:27.981241" elapsed="16.289531"/>
+</suite>
+<status status="PASS" start="2025-01-04T22:55:27.979638" elapsed="16.292886"/>
+</suite>
+<status status="PASS" start="2025-01-04T22:55:27.935633" elapsed="16.338036"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">zmazanieBaneraIkonaKos</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="PythonProject2">PythonProject2</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">PythonProject2.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="freshFriUniza">PythonProject2.Test.freshFriUniza</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="zmazanieBaneraIkonaKos">PythonProject2.Test.freshFriUniza.zmazanieBaneraIkonaKos</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

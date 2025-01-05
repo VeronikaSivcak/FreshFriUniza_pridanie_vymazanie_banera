@@ -1,0 +1,4 @@
+--suite validaciaURL
+--outputdir results/validaciaURL
+--report report.html
+--log log.html
